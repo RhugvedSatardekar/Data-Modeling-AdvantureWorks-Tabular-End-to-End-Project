@@ -24,8 +24,24 @@
 
 ![image](https://github.com/user-attachments/assets/802a5eaa-ca2e-464e-bb70-2bdb3dac7b63)
 
-![image](https://github.com/user-attachments/assets/9befdedf-79d3-45c4-81be-65572efb8be2)
 
+
+![image](https://github.com/user-attachments/assets/71880653-430e-413b-9f41-b85063d3af40)
+
+SQL Server 2022	C:\Windows\SysWOW64\SQLServerManager16.msc
+
+![image](https://github.com/user-attachments/assets/15ee620d-1cf8-44e5-b8da-f901f6003ff9)
+
+![image](https://github.com/user-attachments/assets/c1178121-a4ea-4e92-aba7-1685cc9dae30)
+
+![image](https://github.com/user-attachments/assets/3cc6ff05-a895-42dd-bd27-8a59cc494fc3)
+
+![image](https://github.com/user-attachments/assets/4401cb7b-b624-4faa-b1f3-627aa5042577)
+
+
+---
+
+![image](https://github.com/user-attachments/assets/9befdedf-79d3-45c4-81be-65572efb8be2)
 
 ![image](https://github.com/user-attachments/assets/85c3248c-db5f-4458-a1cd-96cc3b59a143)
 
@@ -42,6 +58,9 @@
 ![image](https://github.com/user-attachments/assets/cce4fb4a-b7a0-4ce4-b8ee-c90b876092c3)
 
 ![image](https://github.com/user-attachments/assets/d2e583ae-42fa-45f7-9b5e-958a2267d030)
+
+![image](https://github.com/user-attachments/assets/d5ed0e56-a17f-4404-8c72-1e35e00fede7)
+
 
 
 
