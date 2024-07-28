@@ -68,6 +68,7 @@ SQL Server 2022	C:\Windows\SysWOW64\SQLServerManager16.msc
 
 ![image](https://github.com/user-attachments/assets/95c6eaf2-0d8c-4ee2-ba39-fada63845f1d)
 
+![image](https://github.com/user-attachments/assets/8d735600-9f92-4c9a-b68b-365043a996e6)
 
 -- SSIS part
 
@@ -77,4 +78,16 @@ SQL Server 2022	C:\Windows\SysWOW64\SQLServerManager16.msc
 
 ![image](https://github.com/user-attachments/assets/2ba4fa1d-5123-4108-ad61-858d8437e501)
 
+![image](https://github.com/user-attachments/assets/4c6ea10f-31dc-440c-80b3-25ddafc3882e)
+
+
+![image](https://github.com/user-attachments/assets/66bb7f7f-6472-41f5-9e69-2ff91b7e984e)
+
+-- Deploy SSIS Package
+
+![image](https://github.com/user-attachments/assets/0b84059d-ccee-4bfe-a0fc-bdc6e27ff397)
+
+![image](https://github.com/user-attachments/assets/ed201336-7514-42fa-bba4-2757fd892182)
+
+![image](https://github.com/user-attachments/assets/d5801d7c-3eaf-4716-b107-e2d089dc4f7c)
 
