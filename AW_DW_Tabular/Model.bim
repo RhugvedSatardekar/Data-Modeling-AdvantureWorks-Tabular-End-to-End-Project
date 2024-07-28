@@ -178,23 +178,61 @@
         "measures": [
           {
             "name": "TotalSalesAmount_All",
-            "expression": " CALCULATE(sum(FactInternetSales[SalesAmount]),ALL())"
+            "expression": " CALCULATE(sum(FactInternetSales[SalesAmount]),ALL())",
+            "formatString": "\"₹\" #,0.00;#,0.00 -\"₹\";\"₹\" #,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"16393\" DisplayName=\"₹ English (India)\" Symbol=\"₹\" PositivePattern=\"2\" NegativePattern=\"12\" /></Format>"
+              }
+            ]
           },
           {
             "name": "TotalRows",
-            "expression": " COUNTROWS(FactInternetSales)"
+            "expression": " COUNTROWS(FactInternetSales)",
+            "formatString": "#,0"
           },
           {
             "name": "Total_Tax_Amount",
-            "expression": " sum(FactInternetSales[TaxAmt])"
+            "expression": " sum(FactInternetSales[TaxAmt])",
+            "formatString": "\"₹\" #,0.00;#,0.00 -\"₹\";\"₹\" #,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"16393\" DisplayName=\"₹ English (India)\" Symbol=\"₹\" PositivePattern=\"2\" NegativePattern=\"12\" /></Format>"
+              }
+            ]
           },
           {
             "name": "TotalProfit(After_Tax_Deduction)",
-            "expression": " ([TotalSalesAmount_All] - [Total_Product_Cost]) - [Total_Tax_Amount]"
+            "expression": " ([TotalSalesAmount_All] - [Total_Product_Cost]) - [Total_Tax_Amount]",
+            "formatString": "\"₹\" #,0.00;#,0.00 -\"₹\";\"₹\" #,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"16393\" DisplayName=\"₹ English (India)\" Symbol=\"₹\" PositivePattern=\"2\" NegativePattern=\"12\" /></Format>"
+              }
+            ]
           },
           {
             "name": "Total_Product_Cost",
-            "expression": " CALCULATE(sum(FactInternetSales[TotalProductCost]))"
+            "expression": " CALCULATE(sum(FactInternetSales[TotalProductCost]))",
+            "formatString": "\"₹\" #,0.00;#,0.00 -\"₹\";\"₹\" #,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"16393\" DisplayName=\"₹ English (India)\" Symbol=\"₹\" PositivePattern=\"2\" NegativePattern=\"12\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "YoY_Profit_%",
+            "expression": [
+              " ",
+              "CALCULATE([Total_Product_Cost],SAMEPERIODLASTYEAR(DimDate[FullDateAlternateKey]))",
+              ""
+            ],
+            "formatString": "0"
           }
         ]
       },
@@ -418,7 +456,8 @@
           {
             "name": "FullDateAlternateKey",
             "dataType": "dateTime",
-            "sourceColumn": "FullDateAlternateKey"
+            "sourceColumn": "FullDateAlternateKey",
+            "formatString": "General Date"
           },
           {
             "name": "DayNumberOfWeek",
@@ -520,6 +559,19 @@
                 "    dbo_DimDate"
               ]
             }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Maxdate",
+            "expression": " MAX(DimDate[FullDateAlternateKey])",
+            "formatString": "MMMM, yyyy",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"16393\" Group=\"YearMonth\" FormatString=\"MMMM, yyyy\" /></DateTimes></Format>"
+              }
+            ]
           }
         ]
       },
@@ -867,22 +919,166 @@
         ]
       },
       {
-        "name": "FactInternetSalesReason",
+        "name": "CalculatedTable 1",
         "columns": [
           {
-            "name": "SalesOrderNumber",
+            "type": "calculatedTableColumn",
+            "name": "Total Product Cost",
+            "dataType": "decimal",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Total Product Cost]",
+            "formatString": "\"₹\" #,0.00;#,0.00 -\"₹\";\"₹\" #,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"16393\" DisplayName=\"₹ English (India)\" Symbol=\"₹\" PositivePattern=\"2\" NegativePattern=\"12\" /></Format>"
+              }
+            ]
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Total Tax Amount",
+            "dataType": "decimal",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Total Tax Amount]",
+            "formatString": "\"₹\" #,0.00;#,0.00 -\"₹\";\"₹\" #,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"16393\" DisplayName=\"₹ English (India)\" Symbol=\"₹\" PositivePattern=\"2\" NegativePattern=\"12\" /></Format>"
+              }
+            ]
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Total Profit",
+            "dataType": "decimal",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Total Profit]",
+            "formatString": "\"₹\" #,0.00;#,0.00 -\"₹\";\"₹\" #,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"16393\" DisplayName=\"₹ English (India)\" Symbol=\"₹\" PositivePattern=\"2\" NegativePattern=\"12\" /></Format>"
+              }
+            ]
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "CalendarYear",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "DimDate[CalendarYear]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Last Year Product Cost",
+            "dataType": "decimal",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Last Year Product Cost]",
+            "formatString": "\"₹\" #,0.00;#,0.00 -\"₹\";\"₹\" #,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"16393\" DisplayName=\"₹ English (India)\" Symbol=\"₹\" PositivePattern=\"2\" NegativePattern=\"12\" /></Format>"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": "SUMMARIZE(FactInternetSales,DimDate[CalendarYear],\"Total Product Cost\",[Total_Product_Cost],\"Total Tax Amount\",[Total_Tax_Amount],\"Total Profit\",[TotalProfit(After_Tax_Deduction)],\"Last Year Product Cost\",[YoY_Profit_%])"
+            }
+          }
+        ]
+      },
+      {
+        "name": "SummarizedTable",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "SalesTerritoryCountry",
             "dataType": "string",
-            "sourceColumn": "SalesOrderNumber"
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "DimSalesTerritory[SalesTerritoryCountry]"
           },
           {
-            "name": "SalesOrderLineNumber",
+            "type": "calculatedTableColumn",
+            "name": "SalesTerritoryGroup",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "DimSalesTerritory[SalesTerritoryGroup]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 2",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                "SUMMARIZE(",
+                "FILTER(",
+                "DimSalesTerritory,DimSalesTerritory[SalesTerritoryCountry] <> \"NA\" && DimSalesTerritory[SalesTerritoryGroup] <> \"NA\"",
+                "),",
+                "DimSalesTerritory[SalesTerritoryCountry],DimSalesTerritory[SalesTerritoryGroup]",
+                ")"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DatabaseLog",
+        "columns": [
+          {
+            "name": "DatabaseLogID",
             "dataType": "int64",
-            "sourceColumn": "SalesOrderLineNumber"
+            "sourceColumn": "DatabaseLogID"
           },
           {
-            "name": "SalesReasonKey",
-            "dataType": "int64",
-            "sourceColumn": "SalesReasonKey"
+            "name": "PostTime",
+            "dataType": "dateTime",
+            "sourceColumn": "PostTime"
+          },
+          {
+            "name": "DatabaseUser",
+            "dataType": "string",
+            "sourceColumn": "DatabaseUser"
+          },
+          {
+            "name": "Event",
+            "dataType": "string",
+            "sourceColumn": "Event"
+          },
+          {
+            "name": "Schema",
+            "dataType": "string",
+            "sourceColumn": "Schema"
+          },
+          {
+            "name": "Object",
+            "dataType": "string",
+            "sourceColumn": "Object"
+          },
+          {
+            "name": "TSQL",
+            "dataType": "string",
+            "sourceColumn": "TSQL"
+          },
+          {
+            "name": "XmlEvent",
+            "dataType": "string",
+            "sourceColumn": "XmlEvent"
           }
         ],
         "partitions": [
@@ -894,9 +1090,150 @@
               "expression": [
                 "let",
                 "    Source = #\"SQL/SYSTEMUNHACKABL\\RHUGVEDSQLSERVER;AdventureWorksDW2016\",",
-                "    dbo_FactInternetSalesReason = Source{[Schema=\"dbo\",Item=\"FactInternetSalesReason\"]}[Data]",
+                "    dbo_DatabaseLog = Source{[Schema=\"dbo\",Item=\"DatabaseLog\"]}[Data]",
                 "in",
-                "    dbo_FactInternetSalesReason"
+                "    dbo_DatabaseLog"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "ProspectiveBuyer",
+        "columns": [
+          {
+            "name": "ProspectiveBuyerKey",
+            "dataType": "int64",
+            "sourceColumn": "ProspectiveBuyerKey"
+          },
+          {
+            "name": "ProspectAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "ProspectAlternateKey"
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "sourceColumn": "FirstName"
+          },
+          {
+            "name": "MiddleName",
+            "dataType": "string",
+            "sourceColumn": "MiddleName"
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "sourceColumn": "LastName"
+          },
+          {
+            "name": "BirthDate",
+            "dataType": "dateTime",
+            "sourceColumn": "BirthDate"
+          },
+          {
+            "name": "MaritalStatus",
+            "dataType": "string",
+            "sourceColumn": "MaritalStatus"
+          },
+          {
+            "name": "Gender",
+            "dataType": "string",
+            "sourceColumn": "Gender"
+          },
+          {
+            "name": "EmailAddress",
+            "dataType": "string",
+            "sourceColumn": "EmailAddress"
+          },
+          {
+            "name": "YearlyIncome",
+            "dataType": "decimal",
+            "sourceColumn": "YearlyIncome"
+          },
+          {
+            "name": "TotalChildren",
+            "dataType": "int64",
+            "sourceColumn": "TotalChildren"
+          },
+          {
+            "name": "NumberChildrenAtHome",
+            "dataType": "int64",
+            "sourceColumn": "NumberChildrenAtHome"
+          },
+          {
+            "name": "Education",
+            "dataType": "string",
+            "sourceColumn": "Education"
+          },
+          {
+            "name": "Occupation",
+            "dataType": "string",
+            "sourceColumn": "Occupation"
+          },
+          {
+            "name": "HouseOwnerFlag",
+            "dataType": "string",
+            "sourceColumn": "HouseOwnerFlag"
+          },
+          {
+            "name": "NumberCarsOwned",
+            "dataType": "int64",
+            "sourceColumn": "NumberCarsOwned"
+          },
+          {
+            "name": "AddressLine1",
+            "dataType": "string",
+            "sourceColumn": "AddressLine1"
+          },
+          {
+            "name": "AddressLine2",
+            "dataType": "string",
+            "sourceColumn": "AddressLine2"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City"
+          },
+          {
+            "name": "StateProvinceCode",
+            "dataType": "string",
+            "sourceColumn": "StateProvinceCode"
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "sourceColumn": "PostalCode"
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "sourceColumn": "Phone"
+          },
+          {
+            "name": "Salutation",
+            "dataType": "string",
+            "sourceColumn": "Salutation"
+          },
+          {
+            "name": "Unknown",
+            "dataType": "int64",
+            "sourceColumn": "Unknown"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/SYSTEMUNHACKABL\\RHUGVEDSQLSERVER;AdventureWorksDW2016\",",
+                "    dbo_ProspectiveBuyer = Source{[Schema=\"dbo\",Item=\"ProspectiveBuyer\"]}[Data]",
+                "in",
+                "    dbo_ProspectiveBuyer"
               ]
             }
           }
