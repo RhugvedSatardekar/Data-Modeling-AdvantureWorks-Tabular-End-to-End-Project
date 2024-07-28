@@ -61,7 +61,20 @@ SQL Server 2022	C:\Windows\SysWOW64\SQLServerManager16.msc
 
 ![image](https://github.com/user-attachments/assets/d5ed0e56-a17f-4404-8c72-1e35e00fede7)
 
+-- deployment
+![image](https://github.com/user-attachments/assets/6cd788e2-6b5f-401b-8ac9-49fe40524ce3)
+
+![image](https://github.com/user-attachments/assets/11822a42-be36-4b0e-acef-10ff96536b33)
+
+![image](https://github.com/user-attachments/assets/95c6eaf2-0d8c-4ee2-ba39-fada63845f1d)
 
 
+-- SSIS part
+
+![image](https://github.com/user-attachments/assets/132bdb48-daef-4438-bfff-4bf2cc588bd2)
+
+![image](https://github.com/user-attachments/assets/05576f70-aace-4d3f-aa38-d4608dd76851)
+
+![image](https://github.com/user-attachments/assets/2ba4fa1d-5123-4108-ad61-858d8437e501)
 
 
