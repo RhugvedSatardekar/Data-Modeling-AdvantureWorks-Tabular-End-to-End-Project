@@ -111,3 +111,20 @@ SQL Server 2022	C:\Windows\SysWOW64\SQLServerManager16.msc
 
 ![image](https://github.com/user-attachments/assets/aaed4aea-585f-4f57-ba2b-16f0e46a7016)
 
+
+-- Creating Power BI Report using SSAS Tabular Cube 
+
+![image](https://github.com/user-attachments/assets/979b1b70-6f9a-4c8b-9ce5-7e1b14cf4255)
+
+![image](https://github.com/user-attachments/assets/d4da05d5-05a3-4154-8dfb-10a8b9b4e2de)
+
+- using connect live
+
+![image](https://github.com/user-attachments/assets/b9eb092e-e03c-4c29-82f1-9934e56359d4)
+
+![image](https://github.com/user-attachments/assets/5bde563d-d847-4556-916d-dbfa721fa7de)
+
+![image](https://github.com/user-attachments/assets/50f71dd2-48f9-4186-a977-8fd90885957a)
+
+- Publish to power BI services
+![image](https://github.com/user-attachments/assets/2e79ac5e-b931-4a0f-9177-9c1c1d9112fc)
