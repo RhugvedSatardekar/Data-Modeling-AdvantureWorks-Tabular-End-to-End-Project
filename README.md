@@ -131,3 +131,20 @@ SQL Server 2022	C:\Windows\SysWOW64\SQLServerManager16.msc
 
 - Publish to power BI services
 ![image](https://github.com/user-attachments/assets/2e79ac5e-b931-4a0f-9177-9c1c1d9112fc)
+
+-- Adding Perspective
+
+![image](https://github.com/user-attachments/assets/a35802ae-3284-4781-9c98-d6f4224f7e25)
+
+build and deploy again
+![image](https://github.com/user-attachments/assets/116a53bf-9d91-425b-adaa-d281ad56400b)
+
+![image](https://github.com/user-attachments/assets/9707d291-ffb3-41db-b646-010f66e9e869)
+
+![image](https://github.com/user-attachments/assets/3e6ef1fa-fab1-41a1-ac2e-33821b992370)
+
+for making updates in connect live storage mode in Power BI we need to change the data connetivity mode to Direct Query
+
+![image](https://github.com/user-attachments/assets/1aef73e5-4526-42d0-b7d7-8955c477bff4)
+
+![image](https://github.com/user-attachments/assets/d9f4443a-cc10-4698-a8e8-ca248cdf3dc2)
