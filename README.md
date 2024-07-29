@@ -207,3 +207,31 @@ data is updated in SSAS database and  Power BI
 
 ### RLS in SSAS
 
+
+![image](https://github.com/user-attachments/assets/e70f0f88-3142-4bf5-b768-7b6764b0040d)
+
+![image](https://github.com/user-attachments/assets/75229e22-710e-48df-b4ac-d2e6fd178de3)
+
+![image](https://github.com/user-attachments/assets/f7dfc1af-e66d-4c19-bc2f-b70f9f1978aa)
+
+![image](https://github.com/user-attachments/assets/f9936f6a-6819-4dcd-8689-2738a193fad8)
+
+- to add the roles use given path : Control Panel\All Control Panel Items\User Accounts\Manage Accounts
+
+Tables and cols can be selected 
+![image](https://github.com/user-attachments/assets/1f7fe1d2-2dd3-42c9-bf12-596316f36670)
+
+- After SSAS Server Database refresh, Roles are visible
+![image](https://github.com/user-attachments/assets/8aafe3ff-fec4-47ff-9b96-51e4cf364100)
+
+- Testing the Cube in Excel
+
+![image](https://github.com/user-attachments/assets/bced0d1a-53e7-4f86-811b-46620df995b0)
+
+![image](https://github.com/user-attachments/assets/42126961-45d6-4231-bf2d-218edf7e8c82)
+
+--Only Germany Values are filtered for the selected UserX
+
+![image](https://github.com/user-attachments/assets/30ad11da-1813-48f2-9fe6-e86f14fbc66e)
+
+
