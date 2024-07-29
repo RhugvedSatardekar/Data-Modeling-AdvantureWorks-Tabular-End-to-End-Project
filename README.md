@@ -1,7 +1,3 @@
-![image](https://github.com/user-attachments/assets/9312d6dd-c552-4824-8811-cc29746428e5)![image](https://github.com/user-attachments/assets/a2c9a003-ddb1-435b-8c81-a2d55e0091d7)
-
-
-
 ![image](https://github.com/user-attachments/assets/bf6665df-b591-43c4-9deb-c1088c0089e4)
 
 ![image](https://github.com/user-attachments/assets/e0adf0e2-9417-4ab5-ae8b-ece647d7474d)
@@ -208,4 +204,6 @@ data is updated in SSAS database and  Power BI
 -- upon refreshing the Values in Power Bi Report gets update without building SSAS model in Visual Studio, running the SQL Agent jobs, or  executing the SSIS Package 
 
 ![image](https://github.com/user-attachments/assets/542e73e8-f664-4941-a24f-a5c2cd09ec1f)
+
+### RLS in SSAS
 
