@@ -126,5 +126,8 @@ SQL Server 2022	C:\Windows\SysWOW64\SQLServerManager16.msc
 
 ![image](https://github.com/user-attachments/assets/50f71dd2-48f9-4186-a977-8fd90885957a)
 
+
+
+
 - Publish to power BI services
 ![image](https://github.com/user-attachments/assets/2e79ac5e-b931-4a0f-9177-9c1c1d9112fc)
