@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/a2c9a003-ddb1-435b-8c81-a2d55e0091d7)
+![image](https://github.com/user-attachments/assets/9312d6dd-c552-4824-8811-cc29746428e5)![image](https://github.com/user-attachments/assets/a2c9a003-ddb1-435b-8c81-a2d55e0091d7)
 
 
 
@@ -148,3 +148,64 @@ for making updates in connect live storage mode in Power BI we need to change th
 ![image](https://github.com/user-attachments/assets/1aef73e5-4526-42d0-b7d7-8955c477bff4)
 
 ![image](https://github.com/user-attachments/assets/d9f4443a-cc10-4698-a8e8-ca248cdf3dc2)
+
+![image](https://github.com/user-attachments/assets/a6408940-3ddf-4560-878a-046676ad517a)
+
+Delete the duplicated data source created after storage mode conversion
+
+![image](https://github.com/user-attachments/assets/d023856a-1e72-4c42-b0d4-ee16baaa62de)
+
+now we can see the change in model storage mode
+
+![image](https://github.com/user-attachments/assets/ff003691-8d5a-4b3a-a8d8-7c317a4af412)
+
+-- Demo of Manual Data refresh and Direct Query 
+
+-- Manual Data Refresh
+![image](https://github.com/user-attachments/assets/6594490e-1d6f-4c04-b5d1-fc3ed9ffd206)
+
+![image](https://github.com/user-attachments/assets/091b79e4-3a99-4c36-9398-5d6f8f09aacb)
+
+lets make changes in original data source
+
+Increase the sales amount for SalesOrderNumber = 'SO43697' by 1000 
+
+![image](https://github.com/user-attachments/assets/593c9452-a46a-4fb8-853a-f30b211dcb36)
+
+![image](https://github.com/user-attachments/assets/771f58d1-87a4-4099-a49d-8de01549d3ba)
+
+![image](https://github.com/user-attachments/assets/41a4c4bc-fdc2-4099-a22e-37d6b02c0978)
+
+the SalesAmount is not updated in Analysis Services Server Database because we need to execute the SSIS package containing the model 
+
+![image](https://github.com/user-attachments/assets/15b3c140-7d73-431e-a470-6ecc15733e99)
+
+to update the changes in SSAS database we will run the SQL Agent Job created earlier to execute the SSIS package
+
+![image](https://github.com/user-attachments/assets/2d417090-79c1-424a-86e4-5c1f5b121f2b)
+
+![image](https://github.com/user-attachments/assets/00580da2-340a-440c-94b1-20784f551c3b)
+
+
+data is updated in SSAS database and  Power BI
+
+![image](https://github.com/user-attachments/assets/0fd30ebd-28e4-4781-bc08-5a941cc63574)
+
+![image](https://github.com/user-attachments/assets/1137b6ee-78ee-41f7-a5c3-b496fafc63a1)
+
+-- Data refresh through Direct Query from SSAS Tabular cube
+
+![image](https://github.com/user-attachments/assets/0e48d124-9c4d-4cfc-b37c-08b7fc13e96f)
+
+-- now lets increase sales amount for SalesOrderNumber = 'SO43697' by 10000
+
+![image](https://github.com/user-attachments/assets/997c8893-5d0e-4341-bdb1-00f906e3a8b0)
+
+-- the SSAS Database values changes 
+
+![image](https://github.com/user-attachments/assets/65f83e92-6853-40cd-b2e6-d31b304c1624)
+
+-- upon refreshing the Values in Power Bi Report gets update without building SSAS model in Visual Studio, running the SQL Agent jobs, or  executing the SSIS Package 
+
+![image](https://github.com/user-attachments/assets/542e73e8-f664-4941-a24f-a5c2cd09ec1f)
+
