@@ -91,3 +91,23 @@ SQL Server 2022	C:\Windows\SysWOW64\SQLServerManager16.msc
 
 ![image](https://github.com/user-attachments/assets/d5801d7c-3eaf-4716-b107-e2d089dc4f7c)
 
+-- Writing DAX Query over deployed SSAS tabular cube
+
+![image](https://github.com/user-attachments/assets/f297a691-b037-4cd3-8fd5-6ad6ed2a2341)
+
+![image](https://github.com/user-attachments/assets/9a1f7738-8b7b-4b0e-877c-3e31d65f5e87)
+
+-- Analysing the SSAS Tabular Cube in Excel using Power Pivot
+
+![image](https://github.com/user-attachments/assets/f24b2034-46e1-4181-845e-99497b9513c9)
+
+![image](https://github.com/user-attachments/assets/520062dc-b432-4851-b345-376e5fdcf330)
+
+![image](https://github.com/user-attachments/assets/8cfd1bee-a6ab-4da8-aa28-95bf8870f983)
+
+![image](https://github.com/user-attachments/assets/a37b4ed2-0807-4ae9-baff-8710f5333f98)
+
+![image](https://github.com/user-attachments/assets/905bd1b9-755c-47c7-ad9a-a59039d431f3)
+
+![image](https://github.com/user-attachments/assets/aaed4aea-585f-4f57-ba2b-16f0e46a7016)
+
