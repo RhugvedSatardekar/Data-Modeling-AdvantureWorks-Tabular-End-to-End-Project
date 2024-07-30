@@ -1,3 +1,18 @@
+# AdvantureWorks Data Warehouse SSAS Tabular Data Model 
+### Link to Download Datawarehouse backup file 
+https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms
+
+## Restore Advanture Works DW backup file in the SQL server
+
+1. Create the Database in SQL server
+   ![image](https://github.com/user-attachments/assets/b0a2d38a-27cf-422f-acec-4ba61932104b)
+2. Select Restore Database option
+   ![image](https://github.com/user-attachments/assets/8095fc65-566a-4342-9b70-e3d42f5f8050)
+3. Add the backup file in Source and select the destination databse
+   ![image](https://github.com/user-attachments/assets/0469ff26-7a16-4fe0-8445-08e7573609be)
+4. Select Ok and the DWH backup file will be restored into the Database 
+
+## Creating the SSAS Project in Visual Studio and Connecting to the Database 
 ![image](https://github.com/user-attachments/assets/7f52e705-5c51-4c9c-bb9e-6d477c9f743b)
 
 ![image](https://github.com/user-attachments/assets/e0adf0e2-9417-4ab5-ae8b-ece647d7474d)
@@ -16,16 +31,20 @@
 
 ![image](https://github.com/user-attachments/assets/9aaa2209-6afa-462e-bce2-c744aa9ccf2f)
 
+### Setting up the User Login of Analysis Services Server in SSMS which helps reading the data from source into the SSAS Model
 ![image](https://github.com/user-attachments/assets/3f48bdbe-dd2c-4d9c-aa11-bf31bacf64e4)
 
 ![image](https://github.com/user-attachments/assets/802a5eaa-ca2e-464e-bb70-2bdb3dac7b63)
 
 
-
 ![image](https://github.com/user-attachments/assets/71880653-430e-413b-9f41-b85063d3af40)
 
+To access the SQL Server Configuration Manager use below link:
+1. It helps us recognise the status of the server and copy the server name to add to the SSMS.
 SQL Server 2022	C:\Windows\SysWOW64\SQLServerManager16.msc
 
+2. We need to delegate the "select" rights to the "dbo" schema for user we added to the Dataware house Operational Database which is the SSAS Tabular server user
+   
 ![image](https://github.com/user-attachments/assets/15ee620d-1cf8-44e5-b8da-f901f6003ff9)
 
 ![image](https://github.com/user-attachments/assets/c1178121-a4ea-4e92-aba7-1685cc9dae30)
@@ -35,7 +54,7 @@ SQL Server 2022	C:\Windows\SysWOW64\SQLServerManager16.msc
 ![image](https://github.com/user-attachments/assets/4401cb7b-b624-4faa-b1f3-627aa5042577)
 
 
----
+## Building the Data model in the SSAS and writing the calculated DAX measures and Tables to be added to the Data Model 
 
 ![image](https://github.com/user-attachments/assets/9befdedf-79d3-45c4-81be-65572efb8be2)
 
@@ -46,6 +65,7 @@ SQL Server 2022	C:\Windows\SysWOW64\SQLServerManager16.msc
 
 ![image](https://github.com/user-attachments/assets/98075fdf-c108-47ad-8d38-744f51c1671b)
 
+-- Setting up the relations, cardinality, and filter directions between Fact-Dimention tables
 
 ![image](https://github.com/user-attachments/assets/77b95f09-c21f-4595-8e22-295ea450e84c)
 
@@ -53,11 +73,13 @@ SQL Server 2022	C:\Windows\SysWOW64\SQLServerManager16.msc
 
 ![image](https://github.com/user-attachments/assets/cce4fb4a-b7a0-4ce4-b8ee-c90b876092c3)
 
+-- Git Version Controlling of SSAS project 
+
 ![image](https://github.com/user-attachments/assets/d2e583ae-42fa-45f7-9b5e-958a2267d030)
 
 ![image](https://github.com/user-attachments/assets/d5ed0e56-a17f-4404-8c72-1e35e00fede7)
 
--- deployment
+-- Deployment of Data Model to the SSMS
 ![image](https://github.com/user-attachments/assets/6cd788e2-6b5f-401b-8ac9-49fe40524ce3)
 
 ![image](https://github.com/user-attachments/assets/11822a42-be36-4b0e-acef-10ff96536b33)
@@ -66,7 +88,7 @@ SQL Server 2022	C:\Windows\SysWOW64\SQLServerManager16.msc
 
 ![image](https://github.com/user-attachments/assets/8d735600-9f92-4c9a-b68b-365043a996e6)
 
--- SSIS part
+-- Building the Task to execute the SSAS Tabular cube using the SSIS ETL package
 
 ![image](https://github.com/user-attachments/assets/132bdb48-daef-4438-bfff-4bf2cc588bd2)
 
@@ -76,10 +98,9 @@ SQL Server 2022	C:\Windows\SysWOW64\SQLServerManager16.msc
 
 ![image](https://github.com/user-attachments/assets/4c6ea10f-31dc-440c-80b3-25ddafc3882e)
 
-
 ![image](https://github.com/user-attachments/assets/66bb7f7f-6472-41f5-9e69-2ff91b7e984e)
 
--- Deploy SSIS Package
+-- Deployment of SSIS Package
 
 ![image](https://github.com/user-attachments/assets/0b84059d-ccee-4bfe-a0fc-bdc6e27ff397)
 
@@ -114,7 +135,7 @@ SQL Server 2022	C:\Windows\SysWOW64\SQLServerManager16.msc
 
 ![image](https://github.com/user-attachments/assets/d4da05d5-05a3-4154-8dfb-10a8b9b4e2de)
 
-- using connect live
+- using connect live data connectivity mode
 
 ![image](https://github.com/user-attachments/assets/b9eb092e-e03c-4c29-82f1-9934e56359d4)
 
@@ -123,23 +144,21 @@ SQL Server 2022	C:\Windows\SysWOW64\SQLServerManager16.msc
 ![image](https://github.com/user-attachments/assets/50f71dd2-48f9-4186-a977-8fd90885957a)
 
 
-
-
 - Publish to power BI services
 ![image](https://github.com/user-attachments/assets/2e79ac5e-b931-4a0f-9177-9c1c1d9112fc)
 
--- Adding Perspective
+-- Adding Perspective (View) to implement restricted access to users for Data model
 
 ![image](https://github.com/user-attachments/assets/a35802ae-3284-4781-9c98-d6f4224f7e25)
 
-build and deploy again
+-- Build and deploy again
 ![image](https://github.com/user-attachments/assets/116a53bf-9d91-425b-adaa-d281ad56400b)
 
 ![image](https://github.com/user-attachments/assets/9707d291-ffb3-41db-b646-010f66e9e869)
 
 ![image](https://github.com/user-attachments/assets/3e6ef1fa-fab1-41a1-ac2e-33821b992370)
 
-for making updates in connect live storage mode in Power BI we need to change the data connetivity mode to Direct Query
+-- For making updates in connect live storage mode in Power BI we need to change the data connetivity mode to Direct Query
 
 ![image](https://github.com/user-attachments/assets/1aef73e5-4526-42d0-b7d7-8955c477bff4)
 
@@ -147,24 +166,22 @@ for making updates in connect live storage mode in Power BI we need to change th
 
 ![image](https://github.com/user-attachments/assets/a6408940-3ddf-4560-878a-046676ad517a)
 
-Delete the duplicated data source created after storage mode conversion
+-- Delete the duplicated data source created after storage mode conversion
 
 ![image](https://github.com/user-attachments/assets/d023856a-1e72-4c42-b0d4-ee16baaa62de)
 
-now we can see the change in model storage mode
+-- now we can see the change in model storage mode
 
 ![image](https://github.com/user-attachments/assets/ff003691-8d5a-4b3a-a8d8-7c317a4af412)
 
--- Demo of Manual Data refresh and Direct Query 
+## Demo of Manual Data refresh and Direct Query 
 
 -- Manual Data Refresh
 ![image](https://github.com/user-attachments/assets/6594490e-1d6f-4c04-b5d1-fc3ed9ffd206)
 
 ![image](https://github.com/user-attachments/assets/091b79e4-3a99-4c36-9398-5d6f8f09aacb)
 
-lets make changes in original data source
-
-Increase the sales amount for SalesOrderNumber = 'SO43697' by 1000 
+--lets make changes in original data source by increasing the sales amount for SalesOrderNumber = 'SO43697' by 1000 
 
 ![image](https://github.com/user-attachments/assets/593c9452-a46a-4fb8-853a-f30b211dcb36)
 
@@ -172,18 +189,18 @@ Increase the sales amount for SalesOrderNumber = 'SO43697' by 1000
 
 ![image](https://github.com/user-attachments/assets/41a4c4bc-fdc2-4099-a22e-37d6b02c0978)
 
-the SalesAmount is not updated in Analysis Services Server Database because we need to execute the SSIS package containing the model 
+-- The SalesAmount is not updated in Analysis Services Server Database because we need to execute the SSIS package containing the model 
 
 ![image](https://github.com/user-attachments/assets/15b3c140-7d73-431e-a470-6ecc15733e99)
 
-to update the changes in SSAS database we will run the SQL Agent Job created earlier to execute the SSIS package
+-- To update the changes in SSAS database we will run the SQL Agent Job created earlier to execute the SSIS package
 
 ![image](https://github.com/user-attachments/assets/2d417090-79c1-424a-86e4-5c1f5b121f2b)
 
 ![image](https://github.com/user-attachments/assets/00580da2-340a-440c-94b1-20784f551c3b)
 
 
-data is updated in SSAS database and  Power BI
+-- Data is updated in SSAS database and  Power BI
 
 ![image](https://github.com/user-attachments/assets/0fd30ebd-28e4-4781-bc08-5a941cc63574)
 
@@ -205,8 +222,7 @@ data is updated in SSAS database and  Power BI
 
 ![image](https://github.com/user-attachments/assets/542e73e8-f664-4941-a24f-a5c2cd09ec1f)
 
-### RLS in SSAS
-
+## RLS in SSAS
 
 ![image](https://github.com/user-attachments/assets/e70f0f88-3142-4bf5-b768-7b6764b0040d)
 
